@@ -14,7 +14,7 @@ return [
         'host' => 'localhost',
         'username' => 'root',
         'password' => 'root',
-        'dbname' => 'bds_test',
+        'dbname' => 'mydb',
         'charset' => 'utf8',
     ]
 ];
