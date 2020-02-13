@@ -10,14 +10,10 @@ use Phalcon\Config;
 $config = [
     'application' => [
         'title' => 'API',
-        'description' => 'API Test',
-        // 'libraryDir' => APP_PATH . '/library/',
-        // 'middlewaresDir' => APP_PATH . '/middlewares/',
+        'description' => 'API REST',
         'baseUri' => '/',
         'controllersDir' => "app/controllers/",
         'modelsDir' => "app/models/",
-        // 'helpersDir' => APP_PATH . '/helpers/',
-        // 'behaviorsDir' => APP_PATH . '/behaviors/',
         'baseUri' => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
     ],
 ];

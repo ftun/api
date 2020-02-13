@@ -3,18 +3,17 @@
 
 use Phalcon\Mvc\Micro\Collection as MicroCollection;
 
-
-// $generator = new MicroCollection();
-// $generator->setHandler('Api\controllers\GeneratorcodeController', true);
-// $generator->setPrefix('/generator');
-// $generator->get('/', 'index');
-// $generator->get('/code/{tbl:[a-zA-Z0-9\-\w]+}', 'getCode');
-// $app->mount($generator);
-
 $index = new MicroCollection();
 $index->setHandler('Api\controllers\IndexController', true);
-$index->get('/', 'index');
+$index->get('/index', 'index');
 $app->mount($index);
+
+$generator = new MicroCollection();
+$generator->setHandler('Api\controllers\GeneratorcodeController', true);
+$generator->setPrefix('/generator');
+$generator->get('/', 'index');
+$generator->get('/code/{tbl:[a-zA-Z0-9\-\w]+}', 'getCode');
+$app->mount($generator);
 
 /**
  * Not found handler

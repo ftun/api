@@ -1,6 +1,6 @@
 <?php
 
-namespace Api\controllers;
+namespace Api\Helper;
 
 use Phalcon\Di\Injectable;
 use Phalcon\Http\request;
@@ -116,16 +116,7 @@ class BController extends Injectable implements ControllerInterface
      */
     public function searchPagination($limit, $offset)
     {
-        try {
-            $data = $this->modelsManager->createQuery("SELECT * FROM $this->modelClass LIMIT $limit OFFSET $offset")->execute();
-            $this->response->setStatusCode(200);
-            $this->response->setJsonContent($data);
-            return $this->response->send();
-        } catch (\Exception $e) {
-            $this->response->setStatusCode(500);
-            $this->response->setJsonContent($e->getMessage());
-            return $this->response->send();
-        }
+        return $this->getResponseQueryAll("SELECT * FROM {$this->modelClass::getSource()} LIMIT $limit OFFSET $offset");
     }
 
     /**
@@ -134,16 +125,7 @@ class BController extends Injectable implements ControllerInterface
      */
     public function search()
     {
-        try {
-            $data = $this->modelsManager->createQuery("SELECT * FROM $this->modelClass")->execute();
-            $this->response->setStatusCode(200);
-            $this->response->setJsonContent($data);
-            return $this->response->send();
-        } catch (\Exception $e) {
-            $this->response->setStatusCode(500);
-            $this->response->setJsonContent($e->getMessage());
-            return $this->response->send();
-        }
+        return $this->getResponseQueryAll("SELECT * FROM {$this->modelClass::getSource()}");
     }
 
     /**
@@ -203,5 +185,62 @@ class BController extends Injectable implements ControllerInterface
         $this->response->setStatusCode($code, $status);
         $this->response->setJsonContent($response);
         return $this->response->send();
+    }
+
+
+    /**
+    * Funcion para ejecutar una sentencia SQL, obteniendo el response en json del array para servir como respuesta
+    * @param string. SQL
+    * @param array. BindParams
+    * @return array.
+    */
+    protected function getResponseQueryOne($sql, $params = [])
+    {
+        try {
+            $data = $this->getQueryOne($sql, $params);
+            return empty($data) ? $this->buildErrorResponse(404,  "Not Found") : $this->buildSuccessResponse(200, 'Ok', $data);
+        } catch (\Exception $e) {
+            return $this->buildErrorResponse(500, $e->getMessage());
+        }
+    }
+
+    /**
+    * Funcion para ejecutar una sentencia SQL, obteniendo el response en json del multiarray para servir como respuesta
+    * @param string. SQL
+    * @param array. BindParams
+    * @return array.
+    */
+    protected function getResponseQueryAll($sql, $params = [])
+    {
+        try {
+            $data = $this->getQueryAll($sql, $params);
+            return empty($data) ? $this->buildErrorResponse(404, "Not Found") : $this->buildSuccessResponse(200, 'Ok', $data);
+        } catch (\Exception $e) {
+            return $this->buildErrorResponse(500, $e->getMessage());
+        }
+    }
+
+    /**
+    * Funcion para ejecutar una sentencia SQL, obteniendo los datos en un multiarray asociativo de los datos
+    * @param string. SQL
+    * @param array. BindParams
+    * @return array.
+    */
+    protected function getQueryOne($sql, $params = [])
+    {
+        $db = $this->modelClass::getConnection();
+        return $db->fetchOne($sql, \Phalcon\Db::FETCH_ASSOC, $params);
+    }
+
+    /**
+    * Funcion para ejecutar una sentencia SQL, obteniendo los datos en un multiarray asociativo de los datos
+    * @param string. SQL
+    * @param array. BindParams
+    * @return array.
+    */
+    protected function getQueryAll($sql, $params = [])
+    {
+        $db = $this->modelClass::getConnection();
+        return $db->fetchAll($sql, \Phalcon\Db::FETCH_ASSOC, $params);
     }
 }

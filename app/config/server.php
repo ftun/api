@@ -16,7 +16,5 @@ return [
         'password' => 'root',
         'dbname' => 'bds_test',
         'charset' => 'utf8',
-    ],
-    'authService' => 'http://auth-api-qa.clever.palace-resorts.local', // Url de TEST de Auth
-    'idSistema' => SISTEMA,
+    ]
 ];

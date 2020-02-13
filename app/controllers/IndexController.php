@@ -2,14 +2,13 @@
 
 namespace Api\controllers;
 
+use Api\Helper\BController;
 
 class IndexController extends BController
 {
-    /**
-     * Gets view
-     */
-    public function index()
+
+    public function getTest()
     {
-        return parent::index();
+        return $this->buildSuccessResponse(200);
     }
 }
