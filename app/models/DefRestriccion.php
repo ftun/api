@@ -3,14 +3,14 @@
 namespace Api\models;
 
 use Phalcon\Db\Column;
-use Api\Helper\BlameableModel;
+use Api\Helper\BModel;
 use Phalcon\Mvc\Model\MetaData;
 
 /**
  * Clase para el uso como template del modelo
  * @author Felipe Tun <ftun@palaceresorts.com>
  */
-class DefRestriccion extends BlameableModel
+class DefRestriccion extends BModel
 {
     /**
     * Funcion que retorna los metadatos del modelo de la tabla
@@ -22,7 +22,7 @@ class DefRestriccion extends BlameableModel
             // Atributos de la tabla
 
     		MetaData::MODELS_ATTRIBUTES => [
-    			
+
 				'iddef_restriccion',
 				'iddef_actividad',
 				'descripcion',
@@ -40,7 +40,7 @@ class DefRestriccion extends BlameableModel
                 // Atributos que SI son llaves primarias de la tabla
 
     		MetaData::MODELS_PRIMARY_KEY => [
-    			
+
 				'iddef_restriccion',
 				'iddef_restriccion',
 
@@ -49,7 +49,7 @@ class DefRestriccion extends BlameableModel
                 // Atributos que NO son llaves primarias de la tabla
 
     		MetaData::MODELS_NON_PRIMARY_KEY => [
-    			
+
 				'iddef_actividad',
 				'descripcion',
 				'iddef_actividad',
@@ -65,7 +65,7 @@ class DefRestriccion extends BlameableModel
                 // Atributos que no permiten valores NULL
 
     		MetaData::MODELS_NOT_NULL => [
-                
+
 				'iddef_restriccion',
 				'iddef_actividad',
 				'descripcion',
@@ -83,7 +83,7 @@ class DefRestriccion extends BlameableModel
                 // Atributos y sus tipos de datos
 
     		MetaData::MODELS_DATA_TYPES => [
-    			
+
 				'iddef_restriccion' => Column::TYPE_INTEGER,
 				'iddef_actividad' => Column::TYPE_VARCHAR,
 				'descripcion' => Column::TYPE_VARCHAR,
@@ -101,7 +101,7 @@ class DefRestriccion extends BlameableModel
                 // Atributos con tipo de datos Integer
 
     		MetaData::MODELS_DATA_TYPES_NUMERIC => [
-    			
+
 				'iddef_restriccion' => Column::TYPE_INTEGER,
 				'iddef_restriccion' => Column::TYPE_INTEGER,
 				'iddef_actividad' => Column::TYPE_INTEGER,
@@ -112,7 +112,7 @@ class DefRestriccion extends BlameableModel
                 // Atributos y el tipo de cast que se debe aplicar
 
     		MetaData::MODELS_DATA_TYPES_BIND => [
-    			
+
 				'iddef_restriccion' => Column::BIND_PARAM_INT,
 				'iddef_actividad' => Column::BIND_PARAM_STR,
 				'descripcion' => Column::BIND_PARAM_STR,
@@ -130,7 +130,7 @@ class DefRestriccion extends BlameableModel
                 // Atributos y sus valores predeterminados
 
     		MetaData::MODELS_DEFAULT_VALUES => [
-    		    
+
 				'iddef_actividad' => 0,
 				'descripcion' => ' ',
 				'iddef_actividad' => 0,
@@ -146,7 +146,7 @@ class DefRestriccion extends BlameableModel
                 // Atributos que permiten cadenas vacias
 
     		MetaData::MODELS_EMPTY_STRING_VALUES => [
-    			
+
 				'descripcion' => true,
 				'descripcion' => true,
 				'usuario_creacion' => true,
@@ -160,7 +160,7 @@ class DefRestriccion extends BlameableModel
                 'usuario_ultima_modificacion',
                 'fecha_ultima_modificacion',
                 'fecha_creacion',
-    			
+
 				'iddef_restriccion' => true,
 				'iddef_restriccion' => true,
 
@@ -168,7 +168,7 @@ class DefRestriccion extends BlameableModel
 
 
             // Atributo identidad de la tabla, especificar el atributo, si no existe un atributo identidad especificar un boolean en 'false'
-            MetaData::MODELS_IDENTITY_COLUMN => 
+            MetaData::MODELS_IDENTITY_COLUMN =>
 				'iddef_restriccion',
 				'iddef_restriccion',
 

@@ -3,14 +3,14 @@
 namespace Api@@NAMESPACE;
 
 use Phalcon\Db\Column;
-use Api\Helper\BlameableModel;
+use Api\Helper\BModel;
 use Phalcon\Mvc\Model\MetaData;
 
 /**
  * Clase para el uso como template del modelo
  * @author Felipe Tun <ftun@palaceresorts.com>
  */
-class @@CLASSNAME extends BlameableModel
+class @@CLASSNAME extends BModel
 {
     /**
     * Funcion que retorna los metadatos del modelo de la tabla

@@ -3,14 +3,14 @@
 namespace Api\models;
 
 use Phalcon\Db\Column;
-use Api\Helper\BlameableModel;
+use Api\Helper\BModel;
 use Phalcon\Mvc\Model\MetaData;
 
 /**
  * Clase para el uso como template del modelo
  * @author Felipe Tun <ftun@palaceresorts.com>
  */
-class DefActividad extends BlameableModel
+class DefActividad extends BModel
 {
     /**
     * Funcion que retorna los metadatos del modelo de la tabla
@@ -22,7 +22,7 @@ class DefActividad extends BlameableModel
             // Atributos de la tabla
 
     		MetaData::MODELS_ATTRIBUTES => [
-    			
+
 				'iddef_actividad',
 				'iddef_categoria',
 				'descripcion',
@@ -41,7 +41,7 @@ class DefActividad extends BlameableModel
                 // Atributos que SI son llaves primarias de la tabla
 
     		MetaData::MODELS_PRIMARY_KEY => [
-    			
+
 				'iddef_actividad',
 				'iddef_actividad',
 
@@ -50,7 +50,7 @@ class DefActividad extends BlameableModel
                 // Atributos que NO son llaves primarias de la tabla
 
     		MetaData::MODELS_NON_PRIMARY_KEY => [
-    			
+
 				'iddef_categoria',
 				'descripcion',
 				'detalle_actividad',
@@ -67,7 +67,7 @@ class DefActividad extends BlameableModel
                 // Atributos que no permiten valores NULL
 
     		MetaData::MODELS_NOT_NULL => [
-                
+
 				'iddef_actividad',
 				'iddef_categoria',
 				'descripcion',
@@ -86,7 +86,7 @@ class DefActividad extends BlameableModel
                 // Atributos y sus tipos de datos
 
     		MetaData::MODELS_DATA_TYPES => [
-    			
+
 				'iddef_actividad' => Column::TYPE_INTEGER,
 				'iddef_categoria' => Column::TYPE_INTEGER,
 				'descripcion' => Column::TYPE_VARCHAR,
@@ -105,7 +105,7 @@ class DefActividad extends BlameableModel
                 // Atributos con tipo de datos Integer
 
     		MetaData::MODELS_DATA_TYPES_NUMERIC => [
-    			
+
 				'iddef_actividad' => Column::TYPE_INTEGER,
 				'iddef_categoria' => Column::TYPE_INTEGER,
 				'iddef_actividad' => Column::TYPE_INTEGER,
@@ -117,7 +117,7 @@ class DefActividad extends BlameableModel
                 // Atributos y el tipo de cast que se debe aplicar
 
     		MetaData::MODELS_DATA_TYPES_BIND => [
-    			
+
 				'iddef_actividad' => Column::BIND_PARAM_INT,
 				'iddef_categoria' => Column::BIND_PARAM_INT,
 				'descripcion' => Column::BIND_PARAM_STR,
@@ -136,7 +136,7 @@ class DefActividad extends BlameableModel
                 // Atributos y sus valores predeterminados
 
     		MetaData::MODELS_DEFAULT_VALUES => [
-    		    
+
 				'iddef_categoria' => 0,
 				'descripcion' => ' ',
 				'detalle_actividad' => ' ',
@@ -153,7 +153,7 @@ class DefActividad extends BlameableModel
                 // Atributos que permiten cadenas vacias
 
     		MetaData::MODELS_EMPTY_STRING_VALUES => [
-    			
+
 				'descripcion' => true,
 				'detalle_actividad' => true,
 				'descripcion' => true,
@@ -168,7 +168,7 @@ class DefActividad extends BlameableModel
                 'usuario_ultima_modificacion',
                 'fecha_ultima_modificacion',
                 'fecha_creacion',
-    			
+
 				'iddef_actividad' => true,
 				'iddef_actividad' => true,
 
@@ -176,7 +176,7 @@ class DefActividad extends BlameableModel
 
 
             // Atributo identidad de la tabla, especificar el atributo, si no existe un atributo identidad especificar un boolean en 'false'
-            MetaData::MODELS_IDENTITY_COLUMN => 
+            MetaData::MODELS_IDENTITY_COLUMN =>
 				'iddef_actividad',
 				'iddef_actividad',
 

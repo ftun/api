@@ -3,14 +3,14 @@
 namespace Api\models;
 
 use Phalcon\Db\Column;
-use Api\Helper\BlameableModel;
+use Api\Helper\BModel;
 use Phalcon\Mvc\Model\MetaData;
 
 /**
  * Clase para el uso como template del modelo
  * @author Felipe Tun <ftun@palaceresorts.com>
  */
-class DefCategoria extends BlameableModel
+class DefCategoria extends BModel
 {
     /**
     * Funcion que retorna los metadatos del modelo de la tabla
@@ -22,7 +22,7 @@ class DefCategoria extends BlameableModel
             // Atributos de la tabla
 
     		MetaData::MODELS_ATTRIBUTES => [
-    			
+
 				'iddef_categoria',
 				'iddef_unidad_negocio',
 				'iddef_categoria_padre',
@@ -42,7 +42,7 @@ class DefCategoria extends BlameableModel
                 // Atributos que SI son llaves primarias de la tabla
 
     		MetaData::MODELS_PRIMARY_KEY => [
-    			
+
 				'iddef_categoria',
 				'iddef_categoria',
 
@@ -51,7 +51,7 @@ class DefCategoria extends BlameableModel
                 // Atributos que NO son llaves primarias de la tabla
 
     		MetaData::MODELS_NON_PRIMARY_KEY => [
-    			
+
 				'iddef_unidad_negocio',
 				'iddef_categoria_padre',
 				'descripcion',
@@ -69,7 +69,7 @@ class DefCategoria extends BlameableModel
                 // Atributos que no permiten valores NULL
 
     		MetaData::MODELS_NOT_NULL => [
-                
+
 				'iddef_categoria',
 				'iddef_unidad_negocio',
 				'iddef_categoria_padre',
@@ -89,7 +89,7 @@ class DefCategoria extends BlameableModel
                 // Atributos y sus tipos de datos
 
     		MetaData::MODELS_DATA_TYPES => [
-    			
+
 				'iddef_categoria' => Column::TYPE_INTEGER,
 				'iddef_unidad_negocio' => Column::TYPE_INTEGER,
 				'iddef_categoria_padre' => Column::TYPE_INTEGER,
@@ -109,7 +109,7 @@ class DefCategoria extends BlameableModel
                 // Atributos con tipo de datos Integer
 
     		MetaData::MODELS_DATA_TYPES_NUMERIC => [
-    			
+
 				'iddef_categoria' => Column::TYPE_INTEGER,
 				'iddef_unidad_negocio' => Column::TYPE_INTEGER,
 				'iddef_categoria_padre' => Column::TYPE_INTEGER,
@@ -123,7 +123,7 @@ class DefCategoria extends BlameableModel
                 // Atributos y el tipo de cast que se debe aplicar
 
     		MetaData::MODELS_DATA_TYPES_BIND => [
-    			
+
 				'iddef_categoria' => Column::BIND_PARAM_INT,
 				'iddef_unidad_negocio' => Column::BIND_PARAM_INT,
 				'iddef_categoria_padre' => Column::BIND_PARAM_INT,
@@ -143,7 +143,7 @@ class DefCategoria extends BlameableModel
                 // Atributos y sus valores predeterminados
 
     		MetaData::MODELS_DEFAULT_VALUES => [
-    		    
+
 				'iddef_unidad_negocio' => 0,
 				'iddef_categoria_padre' => 0,
 				'descripcion' => ' ',
@@ -161,7 +161,7 @@ class DefCategoria extends BlameableModel
                 // Atributos que permiten cadenas vacias
 
     		MetaData::MODELS_EMPTY_STRING_VALUES => [
-    			
+
 				'descripcion' => true,
 				'descripcion' => true,
 				'usuario_creacion' => true,
@@ -175,7 +175,7 @@ class DefCategoria extends BlameableModel
                 'usuario_ultima_modificacion',
                 'fecha_ultima_modificacion',
                 'fecha_creacion',
-    			
+
 				'iddef_categoria' => true,
 				'iddef_categoria' => true,
 
@@ -183,7 +183,7 @@ class DefCategoria extends BlameableModel
 
 
             // Atributo identidad de la tabla, especificar el atributo, si no existe un atributo identidad especificar un boolean en 'false'
-            MetaData::MODELS_IDENTITY_COLUMN => 
+            MetaData::MODELS_IDENTITY_COLUMN =>
 				'iddef_categoria',
 				'iddef_categoria',
 
