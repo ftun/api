@@ -6,7 +6,7 @@ use Api\Helper\modelGenerator\Generator;
 use Phalcon\Mvc\Controller;
 
 /**
- * @author Felipe Tun <ftun@palaceresorts.com>
+ * @author Felipe Tun <felipe.tun.cauich@gmail.com.com>
  */
 class GeneratorcodeController extends Controller
 {

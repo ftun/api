@@ -6,7 +6,7 @@ use Api\Helper\BController;
 use Api\models\DefHorario;
 
 /**
- * @author Felipe Tun <ftun@palaceresorts.com>
+ * @author Felipe Tun <felipe.tun.cauich@gmail.com.com>
  * Herendan los siguientes metodos del BController
  *      parent::index();
  *      parent::search();
@@ -23,11 +23,6 @@ class HorarioController extends BController
     * @property. Object
     */
     public $modelClass = "Api\\models\\DefHorario";
-
-    /**
-    * Implementacion trait para ejecucion de querys
-    */
-    // use \Api\Helper\TraitExecuteQuery;
 
     /**
     * Funcion que obtienen informacion de un elemento del modelo en base a su ID

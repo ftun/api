@@ -6,7 +6,7 @@ use Api\Helper\BController;
 use Api\models\DefCategoria;
 
 /**
- * @author Felipe Tun <ftun@palaceresorts.com>
+ * @author Felipe Tun <felipe.tun.cauich@gmail.com.com>
  * Herendan los siguientes metodos del BController
  *      parent::index();
  *      parent::search();
@@ -22,11 +22,6 @@ class CategoriaController extends BController
     public $modelClass = "Api\\models\\DefCategoria";
 
     /**
-    * Implementacion trait para ejecucion de querys
-    */
-    // use \Api\Helper\TraitExecuteQuery;
-
-    /**
     * Funcion que obtienen informacion de un elemento del modelo en base a su ID
     * @param /GET
     * @return JSON
@@ -39,6 +34,7 @@ class CategoriaController extends BController
 
     /**
     * Se obtienen las categorias por unidad de negocio, en relacion padre (categorias) e hijo (subcategorias)
+    * en el FE - Home
     */
     public function getCategoriasPorUnidad($unidad)
     {
@@ -48,7 +44,8 @@ class CategoriaController extends BController
         FROM
             def_categoria
         WHERE
-            iddef_unidad_negocio = :unidad
+                iddef_unidad_negocio = :unidad
+            AND estado = 1
         ORDER BY iddef_categoria_padre ASC;
         ";
 

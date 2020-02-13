@@ -8,7 +8,7 @@ use Phalcon\Mvc\Model\MetaData;
 
 /**
  * Clase para el uso como template del modelo
- * @author Felipe Tun <ftun@palaceresorts.com>
+ * @author Felipe Tun <felipe.tun.cauich@gmail.com.com>
  */
 class DefHorario extends BModel
 {

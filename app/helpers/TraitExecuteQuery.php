@@ -3,7 +3,7 @@
 namespace Api\Helper;
 
 /**
- * @author Felipe Tun <ftun@palaceresorts.com>
+ * @author Felipe Tun <felipe.tun.cauich@gmail.com.com>
  * trait con funciones helper para la ejecucion de sentencia SQL
  */
 trait TraitExecuteQuery

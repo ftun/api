@@ -6,7 +6,7 @@ use Api\Helper\modelGenerator\GeneratorModels;
 
 /**
  * Clase para el generardor de codigo
- * @author Felipe Tun <ftun@palaceresorts.com>
+ * @author Felipe Tun <felipe.tun.cauich@gmail.com.com>
  */
 class Generator
 {

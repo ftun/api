@@ -81,6 +81,7 @@ $Categoriacontrato->setHandler('Api\controllers\UnidadnegocioController', true);
 $Categoriacontrato->setPrefix('/unidadNegocio');
 $Categoriacontrato->get('/', 'index');
 $Categoriacontrato->get('/search', 'search');
+$Categoriacontrato->get('/list', 'getListCatalog');
 $Categoriacontrato->get('/byId/{id:[0-9]+}', 'getElementById');
 $Categoriacontrato->post('/post', 'post');
 $Categoriacontrato->put('/put/{id:[0-9]+}', 'put');

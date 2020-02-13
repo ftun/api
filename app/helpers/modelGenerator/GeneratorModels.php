@@ -4,7 +4,7 @@ namespace Api\Helper\modelGenerator;
 
 /**
  * Clase para el generardor de codigo del modelo
- * @author Felipe Tun <ftun@palaceresorts.com>
+ * @author Felipe Tun <felipe.tun.cauich@gmail.com.com>
  */
 class GeneratorModels
 {

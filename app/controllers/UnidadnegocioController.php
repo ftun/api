@@ -6,7 +6,7 @@ use Api\Helper\BController;
 use Api\models\DefUnidadNegocio;
 
 /**
- * @author Felipe Tun <ftun@palaceresorts.com>
+ * @author Felipe Tun <felipe.tun.cauich@gmail.com.com>
  * Herendan los siguientes metodos del BController
  *      parent::index();
  *      parent::search();
@@ -25,11 +25,6 @@ class UnidadnegocioController extends BController
     public $modelClass = "Api\\models\\DefUnidadNegocio";
 
     /**
-    * Implementacion trait para ejecucion de querys
-    */
-    // use \Api\Helper\TraitExecuteQuery;
-
-    /**
     * Funcion que obtienen informacion de un elemento del modelo en base a su ID
     * @param /GET
     * @return JSON
@@ -38,5 +33,18 @@ class UnidadnegocioController extends BController
     {
         $sql = "SELECT * FROM {$this->modelClass::getSource()} WHERE iddef_unidad_negocio = :id;";
         return $this->getResponseQueryOne($sql, ['id' => $id]);
+    }
+
+    /**
+    * Se obtiene una lista asociativa para el join de datos en el FE
+    * @return mixed
+    */
+    public function getListCatalog()
+    {
+        $data = $this->getQueryAll("SELECT * FROM {$this->modelClass::getSource()}");
+        if (empty($data)) return $this->buildErrorResponse(404);
+
+        $data = array_column($data, 'descripcion', 'iddef_unidad_negocio');
+        return $this->buildSuccessResponse(200, '', $data);
     }
 }
