@@ -27,9 +27,10 @@ $app->mount($Categoriacontrato);
 
 $Categoriacontrato = new MicroCollection();
 $Categoriacontrato->setHandler('Api\controllers\CategoriaController', true);
-$Categoriacontrato->setPrefix('/categoría');
+$Categoriacontrato->setPrefix('/categoria');
 $Categoriacontrato->get('/', 'index');
 $Categoriacontrato->get('/search', 'search');
+$Categoriacontrato->get('/porUnidad/{unidad:[0-9]+}', 'getCategoriasPorUnidad');
 $Categoriacontrato->get('/byId/{id:[0-9]+}', 'getElementById');
 $Categoriacontrato->post('/post', 'post');
 $Categoriacontrato->put('/put/{id:[0-9]+}', 'put');

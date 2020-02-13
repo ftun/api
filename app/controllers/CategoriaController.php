@@ -13,9 +13,6 @@ use Api\models\DefCategoria;
  *      parent::searchPagination($limit, $offset);
  *      parent::post();
  *      parent::put($id);
- *      parent::getListAssoc($key, $value);
- *      parent::getLog($id);
- *      parent::getDataDropDownSimple($key, $value);
  */
 class CategoriaController extends BController
 {
@@ -38,5 +35,38 @@ class CategoriaController extends BController
     {
         $sql = "SELECT * FROM {$this->modelClass::getSource()} WHERE iddef_categoria = :id;";
         return $this->getResponseQueryOne($sql, ['id' => $id]);
+    }
+
+    /**
+    * Se obtienen las categorias por unidad de negocio, en relacion padre (categorias) e hijo (subcategorias)
+    */
+    public function getCategoriasPorUnidad($unidad)
+    {
+        $sql =
+        "SELECT
+            iddef_categoria, iddef_categoria_padre, descripcion
+        FROM
+            def_categoria
+        WHERE
+            iddef_unidad_negocio = :unidad
+        ORDER BY iddef_categoria_padre ASC;
+        ";
+
+        $data = $this->getQueryAll($sql, ['unidad' => $unidad]);
+        if (empty($data)) return $this->buildSuccessResponse(404);
+
+        $newData = [];
+        foreach ($data as $key => $value) {
+                if ($value['iddef_categoria_padre'] == 0) {
+                    $newData[$value['iddef_categoria']] = [
+                        'descripcion' => $value['descripcion'],
+                        'hijos' => [],
+                    ];
+                } else {
+                    $newData[$value['iddef_categoria_padre']]['hijos'][] = $value['descripcion'];
+                }
+        }
+
+        return $this->buildSuccessResponse(200, '', $newData);
     }
 }
