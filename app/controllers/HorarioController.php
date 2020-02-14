@@ -34,4 +34,13 @@ class HorarioController extends BController
         $sql = "SELECT * FROM {$this->modelClass::getSource()} WHERE iddef_horario = :id;";
         return $this->getResponseQueryOne($sql, ['id' => $id]);
     }
+
+    /**
+    * Se obtienen los horarios de la actividad
+    */
+    public function getByActivity($activity)
+    {
+        $sql = "SELECT * FROM {$this->modelClass::getSource()} WHERE iddef_actividad = :activity;";
+        return $this->getResponseQueryAll($sql, ['activity' => $activity]);
+    }
 }
