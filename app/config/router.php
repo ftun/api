@@ -30,6 +30,7 @@ $micro->setHandler('Api\controllers\CategoriaController', true);
 $micro->setPrefix('/categoria');
 $micro->get('/', 'index');
 $micro->get('/search', 'search');
+$micro->get('/list', 'getListCatalog');
 $micro->get('/porUnidad/{unidad:[0-9]+}', 'getCategoriasPorUnidad');
 $micro->get('/byId/{id:[0-9]+}', 'getElementById');
 $micro->post('/post', 'post');

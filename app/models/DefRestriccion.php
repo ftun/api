@@ -22,10 +22,7 @@ class DefRestriccion extends BModel
             // Atributos de la tabla
 
     		MetaData::MODELS_ATTRIBUTES => [
-
-				'iddef_restriccion',
-				'iddef_actividad',
-				'descripcion',
+    			
 				'iddef_restriccion',
 				'iddef_actividad',
 				'descripcion',
@@ -40,8 +37,7 @@ class DefRestriccion extends BModel
                 // Atributos que SI son llaves primarias de la tabla
 
     		MetaData::MODELS_PRIMARY_KEY => [
-
-				'iddef_restriccion',
+    			
 				'iddef_restriccion',
 
     		],
@@ -49,9 +45,7 @@ class DefRestriccion extends BModel
                 // Atributos que NO son llaves primarias de la tabla
 
     		MetaData::MODELS_NON_PRIMARY_KEY => [
-
-				'iddef_actividad',
-				'descripcion',
+    			
 				'iddef_actividad',
 				'descripcion',
 				'estado',
@@ -65,10 +59,7 @@ class DefRestriccion extends BModel
                 // Atributos que no permiten valores NULL
 
     		MetaData::MODELS_NOT_NULL => [
-
-				'iddef_restriccion',
-				'iddef_actividad',
-				'descripcion',
+                
 				'iddef_restriccion',
 				'iddef_actividad',
 				'descripcion',
@@ -83,10 +74,7 @@ class DefRestriccion extends BModel
                 // Atributos y sus tipos de datos
 
     		MetaData::MODELS_DATA_TYPES => [
-
-				'iddef_restriccion' => Column::TYPE_INTEGER,
-				'iddef_actividad' => Column::TYPE_VARCHAR,
-				'descripcion' => Column::TYPE_VARCHAR,
+    			
 				'iddef_restriccion' => Column::TYPE_INTEGER,
 				'iddef_actividad' => Column::TYPE_INTEGER,
 				'descripcion' => Column::TYPE_VARCHAR,
@@ -101,8 +89,7 @@ class DefRestriccion extends BModel
                 // Atributos con tipo de datos Integer
 
     		MetaData::MODELS_DATA_TYPES_NUMERIC => [
-
-				'iddef_restriccion' => Column::TYPE_INTEGER,
+    			
 				'iddef_restriccion' => Column::TYPE_INTEGER,
 				'iddef_actividad' => Column::TYPE_INTEGER,
 				'estado' => Column::TYPE_INTEGER,
@@ -112,10 +99,7 @@ class DefRestriccion extends BModel
                 // Atributos y el tipo de cast que se debe aplicar
 
     		MetaData::MODELS_DATA_TYPES_BIND => [
-
-				'iddef_restriccion' => Column::BIND_PARAM_INT,
-				'iddef_actividad' => Column::BIND_PARAM_STR,
-				'descripcion' => Column::BIND_PARAM_STR,
+    			
 				'iddef_restriccion' => Column::BIND_PARAM_INT,
 				'iddef_actividad' => Column::BIND_PARAM_INT,
 				'descripcion' => Column::BIND_PARAM_STR,
@@ -130,9 +114,7 @@ class DefRestriccion extends BModel
                 // Atributos y sus valores predeterminados
 
     		MetaData::MODELS_DEFAULT_VALUES => [
-
-				'iddef_actividad' => 0,
-				'descripcion' => ' ',
+    		    
 				'iddef_actividad' => 0,
 				'descripcion' => ' ',
 				'estado' => 1,
@@ -146,8 +128,7 @@ class DefRestriccion extends BModel
                 // Atributos que permiten cadenas vacias
 
     		MetaData::MODELS_EMPTY_STRING_VALUES => [
-
-				'descripcion' => true,
+    			
 				'descripcion' => true,
 				'usuario_creacion' => true,
 				'usuario_ultima_modificacion' => true,
@@ -160,16 +141,14 @@ class DefRestriccion extends BModel
                 'usuario_ultima_modificacion',
                 'fecha_ultima_modificacion',
                 'fecha_creacion',
-
-				'iddef_restriccion' => true,
+    			
 				'iddef_restriccion' => true,
 
     		],
 
 
             // Atributo identidad de la tabla, especificar el atributo, si no existe un atributo identidad especificar un boolean en 'false'
-            MetaData::MODELS_IDENTITY_COLUMN =>
-				'iddef_restriccion',
+            MetaData::MODELS_IDENTITY_COLUMN => 
 				'iddef_restriccion',
 
 

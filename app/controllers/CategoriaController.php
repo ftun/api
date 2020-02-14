@@ -66,4 +66,13 @@ class CategoriaController extends BController
 
         return $this->buildSuccessResponse(200, '', $newData);
     }
+
+    /**
+    * Se obtiene una lista asociativa para el join de datos en el FE
+    * @return mixed
+    */
+    public function getListCatalog()
+    {
+        return $this->getListAssoc('iddef_categoria', 'descripcion');
+    }
 }

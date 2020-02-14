@@ -22,11 +22,7 @@ class DefCategoria extends BModel
             // Atributos de la tabla
 
     		MetaData::MODELS_ATTRIBUTES => [
-
-				'iddef_categoria',
-				'iddef_unidad_negocio',
-				'iddef_categoria_padre',
-				'descripcion',
+    			
 				'iddef_categoria',
 				'iddef_unidad_negocio',
 				'iddef_categoria_padre',
@@ -42,8 +38,7 @@ class DefCategoria extends BModel
                 // Atributos que SI son llaves primarias de la tabla
 
     		MetaData::MODELS_PRIMARY_KEY => [
-
-				'iddef_categoria',
+    			
 				'iddef_categoria',
 
     		],
@@ -51,10 +46,7 @@ class DefCategoria extends BModel
                 // Atributos que NO son llaves primarias de la tabla
 
     		MetaData::MODELS_NON_PRIMARY_KEY => [
-
-				'iddef_unidad_negocio',
-				'iddef_categoria_padre',
-				'descripcion',
+    			
 				'iddef_unidad_negocio',
 				'iddef_categoria_padre',
 				'descripcion',
@@ -69,11 +61,7 @@ class DefCategoria extends BModel
                 // Atributos que no permiten valores NULL
 
     		MetaData::MODELS_NOT_NULL => [
-
-				'iddef_categoria',
-				'iddef_unidad_negocio',
-				'iddef_categoria_padre',
-				'descripcion',
+                
 				'iddef_categoria',
 				'iddef_unidad_negocio',
 				'iddef_categoria_padre',
@@ -89,11 +77,7 @@ class DefCategoria extends BModel
                 // Atributos y sus tipos de datos
 
     		MetaData::MODELS_DATA_TYPES => [
-
-				'iddef_categoria' => Column::TYPE_INTEGER,
-				'iddef_unidad_negocio' => Column::TYPE_INTEGER,
-				'iddef_categoria_padre' => Column::TYPE_INTEGER,
-				'descripcion' => Column::TYPE_VARCHAR,
+    			
 				'iddef_categoria' => Column::TYPE_INTEGER,
 				'iddef_unidad_negocio' => Column::TYPE_INTEGER,
 				'iddef_categoria_padre' => Column::TYPE_INTEGER,
@@ -109,10 +93,7 @@ class DefCategoria extends BModel
                 // Atributos con tipo de datos Integer
 
     		MetaData::MODELS_DATA_TYPES_NUMERIC => [
-
-				'iddef_categoria' => Column::TYPE_INTEGER,
-				'iddef_unidad_negocio' => Column::TYPE_INTEGER,
-				'iddef_categoria_padre' => Column::TYPE_INTEGER,
+    			
 				'iddef_categoria' => Column::TYPE_INTEGER,
 				'iddef_unidad_negocio' => Column::TYPE_INTEGER,
 				'iddef_categoria_padre' => Column::TYPE_INTEGER,
@@ -123,11 +104,7 @@ class DefCategoria extends BModel
                 // Atributos y el tipo de cast que se debe aplicar
 
     		MetaData::MODELS_DATA_TYPES_BIND => [
-
-				'iddef_categoria' => Column::BIND_PARAM_INT,
-				'iddef_unidad_negocio' => Column::BIND_PARAM_INT,
-				'iddef_categoria_padre' => Column::BIND_PARAM_INT,
-				'descripcion' => Column::BIND_PARAM_STR,
+    			
 				'iddef_categoria' => Column::BIND_PARAM_INT,
 				'iddef_unidad_negocio' => Column::BIND_PARAM_INT,
 				'iddef_categoria_padre' => Column::BIND_PARAM_INT,
@@ -143,10 +120,7 @@ class DefCategoria extends BModel
                 // Atributos y sus valores predeterminados
 
     		MetaData::MODELS_DEFAULT_VALUES => [
-
-				'iddef_unidad_negocio' => 0,
-				'iddef_categoria_padre' => 0,
-				'descripcion' => ' ',
+    		    
 				'iddef_unidad_negocio' => 0,
 				'iddef_categoria_padre' => 0,
 				'descripcion' => ' ',
@@ -161,8 +135,7 @@ class DefCategoria extends BModel
                 // Atributos que permiten cadenas vacias
 
     		MetaData::MODELS_EMPTY_STRING_VALUES => [
-
-				'descripcion' => true,
+    			
 				'descripcion' => true,
 				'usuario_creacion' => true,
 				'usuario_ultima_modificacion' => true,
@@ -175,16 +148,14 @@ class DefCategoria extends BModel
                 'usuario_ultima_modificacion',
                 'fecha_ultima_modificacion',
                 'fecha_creacion',
-
-				'iddef_categoria' => true,
+    			
 				'iddef_categoria' => true,
 
     		],
 
 
             // Atributo identidad de la tabla, especificar el atributo, si no existe un atributo identidad especificar un boolean en 'false'
-            MetaData::MODELS_IDENTITY_COLUMN =>
-				'iddef_categoria',
+            MetaData::MODELS_IDENTITY_COLUMN => 
 				'iddef_categoria',
 
 

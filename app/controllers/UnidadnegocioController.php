@@ -41,10 +41,6 @@ class UnidadnegocioController extends BController
     */
     public function getListCatalog()
     {
-        $data = $this->getQueryAll("SELECT * FROM {$this->modelClass::getSource()}");
-        if (empty($data)) return $this->buildErrorResponse(404);
-
-        $data = array_column($data, 'descripcion', 'iddef_unidad_negocio');
-        return $this->buildSuccessResponse(200, '', $data);
+        return $this->getListAssoc('iddef_unidad_negocio', 'descripcion');
     }
 }

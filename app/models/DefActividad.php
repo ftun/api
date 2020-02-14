@@ -22,11 +22,7 @@ class DefActividad extends BModel
             // Atributos de la tabla
 
     		MetaData::MODELS_ATTRIBUTES => [
-
-				'iddef_actividad',
-				'iddef_categoria',
-				'descripcion',
-				'detalle_actividad',
+    			
 				'iddef_actividad',
 				'iddef_categoria',
 				'descripcion',
@@ -41,8 +37,7 @@ class DefActividad extends BModel
                 // Atributos que SI son llaves primarias de la tabla
 
     		MetaData::MODELS_PRIMARY_KEY => [
-
-				'iddef_actividad',
+    			
 				'iddef_actividad',
 
     		],
@@ -50,10 +45,7 @@ class DefActividad extends BModel
                 // Atributos que NO son llaves primarias de la tabla
 
     		MetaData::MODELS_NON_PRIMARY_KEY => [
-
-				'iddef_categoria',
-				'descripcion',
-				'detalle_actividad',
+    			
 				'iddef_categoria',
 				'descripcion',
 				'estado',
@@ -67,11 +59,7 @@ class DefActividad extends BModel
                 // Atributos que no permiten valores NULL
 
     		MetaData::MODELS_NOT_NULL => [
-
-				'iddef_actividad',
-				'iddef_categoria',
-				'descripcion',
-				'detalle_actividad',
+                
 				'iddef_actividad',
 				'iddef_categoria',
 				'descripcion',
@@ -86,11 +74,7 @@ class DefActividad extends BModel
                 // Atributos y sus tipos de datos
 
     		MetaData::MODELS_DATA_TYPES => [
-
-				'iddef_actividad' => Column::TYPE_INTEGER,
-				'iddef_categoria' => Column::TYPE_INTEGER,
-				'descripcion' => Column::TYPE_VARCHAR,
-				'detalle_actividad' => Column::TYPE_VARCHAR,
+    			
 				'iddef_actividad' => Column::TYPE_INTEGER,
 				'iddef_categoria' => Column::TYPE_INTEGER,
 				'descripcion' => Column::TYPE_VARCHAR,
@@ -105,9 +89,7 @@ class DefActividad extends BModel
                 // Atributos con tipo de datos Integer
 
     		MetaData::MODELS_DATA_TYPES_NUMERIC => [
-
-				'iddef_actividad' => Column::TYPE_INTEGER,
-				'iddef_categoria' => Column::TYPE_INTEGER,
+    			
 				'iddef_actividad' => Column::TYPE_INTEGER,
 				'iddef_categoria' => Column::TYPE_INTEGER,
 				'estado' => Column::TYPE_INTEGER,
@@ -117,11 +99,7 @@ class DefActividad extends BModel
                 // Atributos y el tipo de cast que se debe aplicar
 
     		MetaData::MODELS_DATA_TYPES_BIND => [
-
-				'iddef_actividad' => Column::BIND_PARAM_INT,
-				'iddef_categoria' => Column::BIND_PARAM_INT,
-				'descripcion' => Column::BIND_PARAM_STR,
-				'detalle_actividad' => Column::BIND_PARAM_STR,
+    			
 				'iddef_actividad' => Column::BIND_PARAM_INT,
 				'iddef_categoria' => Column::BIND_PARAM_INT,
 				'descripcion' => Column::BIND_PARAM_STR,
@@ -136,10 +114,7 @@ class DefActividad extends BModel
                 // Atributos y sus valores predeterminados
 
     		MetaData::MODELS_DEFAULT_VALUES => [
-
-				'iddef_categoria' => 0,
-				'descripcion' => ' ',
-				'detalle_actividad' => ' ',
+    		    
 				'iddef_categoria' => 0,
 				'descripcion' => ' ',
 				'estado' => 1,
@@ -153,9 +128,7 @@ class DefActividad extends BModel
                 // Atributos que permiten cadenas vacias
 
     		MetaData::MODELS_EMPTY_STRING_VALUES => [
-
-				'descripcion' => true,
-				'detalle_actividad' => true,
+    			
 				'descripcion' => true,
 				'usuario_creacion' => true,
 				'usuario_ultima_modificacion' => true,
@@ -168,16 +141,14 @@ class DefActividad extends BModel
                 'usuario_ultima_modificacion',
                 'fecha_ultima_modificacion',
                 'fecha_creacion',
-
-				'iddef_actividad' => true,
+    			
 				'iddef_actividad' => true,
 
     		],
 
 
             // Atributo identidad de la tabla, especificar el atributo, si no existe un atributo identidad especificar un boolean en 'false'
-            MetaData::MODELS_IDENTITY_COLUMN =>
-				'iddef_actividad',
+            MetaData::MODELS_IDENTITY_COLUMN => 
 				'iddef_actividad',
 
 

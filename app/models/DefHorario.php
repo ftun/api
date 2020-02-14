@@ -22,11 +22,7 @@ class DefHorario extends BModel
             // Atributos de la tabla
 
     		MetaData::MODELS_ATTRIBUTES => [
-
-				'iddef_horario',
-				'iddef_actividad',
-				'inicio',
-				'fin',
+    			
 				'iddef_horario',
 				'iddef_actividad',
 				'descripcion',
@@ -41,8 +37,7 @@ class DefHorario extends BModel
                 // Atributos que SI son llaves primarias de la tabla
 
     		MetaData::MODELS_PRIMARY_KEY => [
-
-				'iddef_horario',
+    			
 				'iddef_horario',
 
     		],
@@ -50,10 +45,7 @@ class DefHorario extends BModel
                 // Atributos que NO son llaves primarias de la tabla
 
     		MetaData::MODELS_NON_PRIMARY_KEY => [
-
-				'iddef_actividad',
-				'inicio',
-				'fin',
+    			
 				'iddef_actividad',
 				'descripcion',
 				'estado',
@@ -67,11 +59,7 @@ class DefHorario extends BModel
                 // Atributos que no permiten valores NULL
 
     		MetaData::MODELS_NOT_NULL => [
-
-				'iddef_horario',
-				'iddef_actividad',
-				'inicio',
-				'fin',
+                
 				'iddef_horario',
 				'iddef_actividad',
 				'descripcion',
@@ -86,11 +74,7 @@ class DefHorario extends BModel
                 // Atributos y sus tipos de datos
 
     		MetaData::MODELS_DATA_TYPES => [
-
-				'iddef_horario' => Column::TYPE_INTEGER,
-				'iddef_actividad' => Column::TYPE_INTEGER,
-				'inicio' => Column::TYPE_VARCHAR,
-				'fin' => Column::TYPE_VARCHAR,
+    			
 				'iddef_horario' => Column::TYPE_INTEGER,
 				'iddef_actividad' => Column::TYPE_INTEGER,
 				'descripcion' => Column::TYPE_VARCHAR,
@@ -105,9 +89,7 @@ class DefHorario extends BModel
                 // Atributos con tipo de datos Integer
 
     		MetaData::MODELS_DATA_TYPES_NUMERIC => [
-
-				'iddef_horario' => Column::TYPE_INTEGER,
-				'iddef_actividad' => Column::TYPE_INTEGER,
+    			
 				'iddef_horario' => Column::TYPE_INTEGER,
 				'iddef_actividad' => Column::TYPE_INTEGER,
 				'estado' => Column::TYPE_INTEGER,
@@ -117,11 +99,7 @@ class DefHorario extends BModel
                 // Atributos y el tipo de cast que se debe aplicar
 
     		MetaData::MODELS_DATA_TYPES_BIND => [
-
-				'iddef_horario' => Column::BIND_PARAM_INT,
-				'iddef_actividad' => Column::BIND_PARAM_INT,
-				'inicio' => Column::BIND_PARAM_STR,
-				'fin' => Column::BIND_PARAM_STR,
+    			
 				'iddef_horario' => Column::BIND_PARAM_INT,
 				'iddef_actividad' => Column::BIND_PARAM_INT,
 				'descripcion' => Column::BIND_PARAM_STR,
@@ -136,10 +114,7 @@ class DefHorario extends BModel
                 // Atributos y sus valores predeterminados
 
     		MetaData::MODELS_DEFAULT_VALUES => [
-
-				'iddef_actividad' => 0,
-				'inicio' => ' ',
-				'fin' => ' ',
+    		    
 				'iddef_actividad' => 0,
 				'descripcion' => ' ',
 				'estado' => 1,
@@ -153,9 +128,7 @@ class DefHorario extends BModel
                 // Atributos que permiten cadenas vacias
 
     		MetaData::MODELS_EMPTY_STRING_VALUES => [
-
-				'inicio' => true,
-				'fin' => true,
+    			
 				'descripcion' => true,
 				'usuario_creacion' => true,
 				'usuario_ultima_modificacion' => true,
@@ -168,16 +141,14 @@ class DefHorario extends BModel
                 'usuario_ultima_modificacion',
                 'fecha_ultima_modificacion',
                 'fecha_creacion',
-
-				'iddef_horario' => true,
+    			
 				'iddef_horario' => true,
 
     		],
 
 
             // Atributo identidad de la tabla, especificar el atributo, si no existe un atributo identidad especificar un boolean en 'false'
-            MetaData::MODELS_IDENTITY_COLUMN =>
-				'iddef_horario',
+            MetaData::MODELS_IDENTITY_COLUMN => 
 				'iddef_horario',
 
 

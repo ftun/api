@@ -6,7 +6,6 @@ use Phalcon\Mvc\Model;
 use Phalcon\Mvc\Model\Behavior\Timestampable;
 use Phalcon\Mvc\Model\MetaData;
 use Phalcon\Mvc\Model\Message;
-use Api\Behaviors\Blameable;
 use Phalcon\Validation;
 use Phalcon\Validation\Validator\PresenceOf;
 use Phalcon\Validation\Validator\Uniqueness;
@@ -47,7 +46,6 @@ class BModel extends Model
                 ]
             )
         );
-	    $this->addBehavior(new Blameable());
     }
 
     public function getAttributes()

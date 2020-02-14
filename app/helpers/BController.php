@@ -243,4 +243,16 @@ class BController extends Injectable implements ControllerInterface
         $db = $this->modelClass::getConnection();
         return $db->fetchAll($sql, \Phalcon\Db::FETCH_ASSOC, $params);
     }
+
+    /**
+    * Se obtiene una lista asociativa clave => valor
+    * @return mixed
+    */
+    protected function getListAssoc($key, $value) {
+        $data = $this->getQueryAll("SELECT $key, $value FROM {$this->modelClass::getSource()}");
+        if (empty($data)) return $this->buildErrorResponse(404);
+
+        $data = array_column($data, $value, $key);
+        return $this->buildSuccessResponse(200, '', $data);
+    }
 }
