@@ -21,6 +21,7 @@ $micro->setPrefix('/actividad');
 $micro->get('/', 'index');
 $micro->get('/search', 'search');
 $micro->get('/byId/{id:[0-9]+}', 'getElementById');
+$micro->get('/byCategory/{categoria:[0-9]+}', 'getActividadPorCategoria');
 $micro->post('/post', 'post');
 $micro->put('/put/{id:[0-9]+}', 'put');
 $app->mount($micro);

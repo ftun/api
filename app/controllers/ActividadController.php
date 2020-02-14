@@ -31,4 +31,15 @@ class ActividadController extends BController
         $sql = "SELECT * FROM {$this->modelClass::getSource()} WHERE iddef_actividad = :id;";
         return $this->getResponseQueryOne($sql, ['id' => $id]);
     }
+
+    /**
+    * Se obtiene las actividades de una categoria
+    * @param integer
+    * @return array
+    */
+    public function getActividadPorCategoria($category)
+    {
+        $sql = "SELECT * FROM {$this->modelClass::getSource()} WHERE iddef_categoria = :category;";
+        return $this->getResponseQueryAll($sql, ['category' => $category]);
+    }
 }
