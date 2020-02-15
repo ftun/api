@@ -36,7 +36,7 @@ class RestriccionController extends BController
     }
 
     /**
-    * Se obtienen las restricciones por actividad
+    * Se obtienen las restricciones de la actividad
     */
     public function getByActivity($activity)
     {

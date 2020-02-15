@@ -51,7 +51,6 @@ class CategoriaController extends BController
 
         $data = $this->getQueryAll($sql, ['unidad' => $unidad]);
         if (empty($data)) return $this->buildSuccessResponse(404);
-
         $newData = [];
         foreach ($data as $key => $value) {
                 if ($value['iddef_categoria_padre'] == 0) {
