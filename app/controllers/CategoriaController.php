@@ -59,7 +59,10 @@ class CategoriaController extends BController
                         'hijos' => [],
                     ];
                 } else {
-                    $newData[$value['iddef_categoria_padre']]['hijos'][] = $value['descripcion'];
+                    $newData[$value['iddef_categoria_padre']]['hijos'][] = [
+                        'descripcion' => $value['descripcion'],
+                        'iddef_categoria' => $value['iddef_categoria'],
+                    ];
                 }
         }
 
