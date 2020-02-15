@@ -92,6 +92,17 @@ $micro->put('/put/{id:[0-9]+}', 'put');
 $app->mount($micro);
 
 $micro = new MicroCollection();
+$micro->setHandler('Api\controllers\ServicioController', true);
+$micro->setPrefix('/servicio');
+$micro->get('/', 'index');
+$micro->get('/search', 'search');
+$micro->get('/byId/{id:[0-9]+}', 'getElementById');
+$micro->get('/byActivity/{activity:[0-9]+}', 'getByActivity');
+$micro->post('/post', 'post');
+$micro->put('/put/{id:[0-9]+}', 'put');
+$app->mount($micro);
+
+$micro = new MicroCollection();
 $micro->setHandler('Api\controllers\UserController', true);
 $micro->setPrefix('/user');
 $micro->post('/login', 'postLogin');

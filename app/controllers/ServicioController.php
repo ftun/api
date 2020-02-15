@@ -31,4 +31,13 @@ class ServicioController extends BController
         $sql = "SELECT * FROM {$this->modelClass::getSource()} WHERE iddef_servicio = :id;";
         return $this->getResponseQueryOne($sql, ['id' => $id]);
     }
+
+    /**
+    * Se obtienen los servicios de la actividad
+    */
+    public function getByActivity($activity)
+    {
+        $sql = "SELECT * FROM {$this->modelClass::getSource()} WHERE iddef_actividad = :activity;";
+        return $this->getResponseQueryAll($sql, ['activity' => $activity]);
+    }
 }
